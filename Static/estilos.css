@@ -1,0 +1,293 @@
+.papuclase {
+
+  background-color :  rgba(206, 9, 9, 1)!important;
+ 
+}
+
+.paputitle{
+  width: 450px;
+  color: #ffffff;
+  text-decoration: none;
+  font-family:bold Abril Fatface;
+  font-weight: Regular;
+  font-size: 30px;
+  text-align: center;
+  border-radius: 5px; /* Bordes redondeados opcionales */
+  display: inline-block; /* Hace que ocupe un espacio definido */
+  transition: all 0.3s ease; /* Suaviza las transiciones */
+}
+
+.paputitle:hover {
+  color: white; /* Cambia el color del texto a blanco */
+  border-color: white; /* Agrega un borde visible */
+}
+@media (max-width: 574px) {
+  .paputitle {
+    font-size: 32px; /* Reduce el tamaño de fuente */
+    left: 50px; /* Ajusta la posición del título */
+    width: auto; /* Permite que se adapte al tamaño del contenido */
+  }
+}
+
+@media (max-width: 344px) {
+  .paputitle {
+    font-size: 24px; /* Aún más pequeño para pantallas extra pequeñas */
+    left: 20px; /* Ajusta la posición para pantallas muy pequeñas */
+  }
+}
+
+/* Estilo base para botones y enlaces */
+.btn.huella {
+  display: inline-block; /* Hace que ocupe un espacio definido */
+  color: rgba(255, 255, 255, 0.678); /* Gris claro */
+  font-weight: bold; /* Texto en negrita */
+  padding: 1px 10px; /* Espaciado interno */
+  border-radius: 5px; /* Bordes redondeados opcionales */
+  transition: all 0.3s ease; /* Suaviza las transiciones */
+ 
+}
+
+.btn.profile {
+  display: inline-block; /* Hace que ocupe un espacio definido */
+  color: rgba(255, 255, 255, 0.678); /* Gris claro */
+  font-weight: bold; /* Texto en negrita */
+  padding: 10px 10px; /* Espaciado interno */
+  border-radius: 5px; /* Bordes redondeados opcionales */
+  transition: all 0.3s ease; /* Suaviza las transiciones */
+ 
+}
+
+/* Efecto al pasar el mouse */
+.btn.profile:hover {
+  color: white; /* Cambia el color del texto a blanco */
+  background-color: rgba(255, 255, 255, 0.2); /* Fondo semitransparente */
+  transform: scale(1.1); /* Aumenta el tamaño en un 10% */
+}
+
+/* Efecto adicional para imágenes */
+.btn.profile img {
+  transition: filter 0.3s ease, transform 0.3s ease; /* Suaviza brillo y zoom */
+}
+
+.btn.profile:hover img {
+  filter: brightness(1.5); /* Aumenta el brillo */
+  transform: scale(1); /* Aumenta ligeramente el tamaño de la imagen */
+}
+
+
+/* Efecto al pasar el mouse */
+.btn.huella:hover {
+  color: white; /* Cambia el color del texto a blanco */
+  background-color: rgba(255, 255, 255, 0.2); /* Fondo semitransparente */
+  transform: scale(1.1); /* Aumenta el tamaño en un 10% */
+}
+
+/* Efecto adicional para imágenes */
+.btn.huella img {
+  transition: filter 0.3s ease, transform 0.3s ease; /* Suaviza brillo y zoom */
+}
+
+.btn.huella:hover img {
+  filter: brightness(1.5); /* Aumenta el brillo */
+  transform: scale(1); /* Aumenta ligeramente el tamaño de la imagen */
+}
+
+
+
+.dogimg{
+
+  background-image: url('img/Perro_gato_login.png'); /* Cambia esto a la ruta donde esté tu imagen *//* Cambia esto a la ruta de tu imagen */
+  background-size: cover; /* Asegura que el fondo cubra toda la pantalla */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  background-attachment: fixed; /* Fija la imagen para que permanezca al hacer scroll */
+  height: 100vh; /* Asegura que el contenedor ocupe toda la pantalla */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.prrosimg{
+
+  background-image: url('img/Prroschidos.png'); /* Cambia esto a la ruta donde esté tu imagen *//* Cambia esto a la ruta de tu imagen */
+  background-size: cover; /* Asegura que el fondo cubra toda la pantalla */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  background-attachment: fixed; /* Fija la imagen para que permanezca al hacer scroll */
+  height: 100vh; /* Asegura que el contenedor ocupe toda la pantalla */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.forgot_passimg{
+
+  background-image: url('img/Prroschidos.png'); /* Cambia esto a la ruta donde esté tu imagen *//* Cambia esto a la ruta de tu imagen */
+  background-size: cover; /* Asegura que el fondo cubra toda la pantalla */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  background-attachment: fixed; /* Fija la imagen para que permanezca al hacer scroll */
+  height: 100vh; /* Asegura que el contenedor ocupe toda la pantalla */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.papubg{
+  background-color: rgba(58, 57, 57, 0.822);
+}
+
+.justificado{
+  text-align: justify;
+  font-size: large;
+}
+
+.bgtipscares{
+  background-color: rgb(206, 9, 9);
+
+}
+
+.minh{
+  min-height: 190px;
+  max-height: 190px;
+
+}
+
+.palomita{
+  color: #030303;
+
+}
+
+.content-box {
+  background-color: #f8f9fa; /* Light gray background */
+  border: 1px solid #dee2e6; /* Border color */
+  border-radius: 0.5rem; /* Rounded corners */
+  padding: 20px; /* Inner padding */
+  margin-bottom: 30px; /* Space below the box */
+}
+
+#map {
+  height: 500px;
+  width: 90%;
+  margin: auto;
+  border-radius: 30px;
+
+}
+.exerciseimg{
+  min-height: 250px;
+  max-height: 250px;
+
+}
+
+.bodyfoot{
+  flex: 1; /* Esto asegura que el contenido principal ocupe el espacio restante */
+  display: flex;
+  flex-direction: column;
+}
+
+
+ .hover-container {
+            position: relative;
+            display: block;
+            overflow: hidden;
+        }
+
+        /* Efecto en la imagen al hacer hover */
+        .hover-container img {
+            display: block;
+            width: 100%;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        /* Texto superpuesto */
+        .hover-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: rgb(206, 9, 9, 1);          
+            padding: 10px 20px;
+            font-size: 4rem;
+            font-weight: bold;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.3;
+            border-radius: 5px;
+        }
+
+        @media (max-width: 1270px) {
+          .hover-text {
+            font-size: 3rem; /* Reduce el tamaño de fuente */
+            left: 50%; /* Ajusta la posición del título */
+            width: auto; /* Permite que se adapte al tamaño del contenido */
+            height: auto;
+            
+          }
+        }
+        
+        @media (max-width: 996px) {
+          .hover-text {
+            font-size: 2rem; /* Aún más pequeño para pantallas extra pequeñas */
+            left: 50%; /* Ajusta la posición para pantallas muy pequeñas */
+            height: auto;
+           
+          }
+        }
+
+        @media (max-width: 723px) {
+          .hover-text {
+            font-size: 1rem; /* Aún más pequeño para pantallas extra pequeñas */
+            left: 50%; /* Ajusta la posición para pantallas muy pequeñas */
+            height: auto;
+           
+          }
+        }
+
+        /* Mostrar el texto y oscurecer la imagen al hacer hover */
+        .hover-container:hover img {
+            transform: scale(1.1);
+            opacity: .5;
+        }
+
+        .hover-container:hover .hover-text {
+            opacity: 1;
+        }
+
+.papuclick{
+  cursor: pointer;
+}
+
+.adoptionsimgs {
+  width: 200; 
+  height: 250px; 
+  object-fit: cover;
+}
+
+.minh_adop{
+  min-height: 700px;
+  max-height: 700px;
+}
+
+.profileimg {
+  width: 150px; 
+  height: 150px; 
+}
+
+.papufooter{
+  margin-top: auto;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.papuedit{
+  align-items: center;
+  
+}
+
+

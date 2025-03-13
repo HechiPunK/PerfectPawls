@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfect Pawls</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='estilos.css') }}">
+    <script src="https://kit.fontawesome.com/43c9de827a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../static/estilos.css">
+</head>
+<body>
+   
+    {% include 'header.html' %}
+    <br>
+   <!-- Filtro de búsqueda -->
+<div class="container-fluid">
+    <div class="row">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    <div class="container mt-3">
+      {% for category, message in messages %}
+        <div class="alert alert-{{ category }}">{{ message }}</div>
+      {% endfor %}
+    </div>
+  {% endif %}
+{% endwith %}
+        <div class="col-md-4">
+            <div class="card mb-4" style="width: 90%;">
+                <div class="card-body">
+                    <form method="GET" action="{{ url_for('ruta_cat') }}">
+                        <div>
+                            <h6>Type</h6>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="type" value="Dog" id="dogCheckbox">
+                                <label class="form-check-label" for="dogCheckbox">Dog</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="type" value="Cat" id="catCheckbox">
+                                <label class="form-check-label" for="catCheckbox">Cat</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="type" value="Other" id="otherCheckbox">
+                                <label class="form-check-label" for="otherCheckbox">Other</label>
+                            </div>
+
+                            <h6>Size</h6>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="size" value="Small" id="smallCheckbox">
+                                <label class="form-check-label" for="smallCheckbox">Small</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="size" value="Medium" id="mediumCheckbox">
+                                <label class="form-check-label" for="mediumCheckbox">Medium</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="size" value="Big" id="bigCheckbox">
+                                <label class="form-check-label" for="bigCheckbox">Big</label>
+                            </div>
+
+                            <h6>Age</h6>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="age" value="Puppy" id="puppyCheckbox">
+                                <label class="form-check-label" for="puppyCheckbox">Puppy</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="age" value="Adult" id="adultCheckbox">
+                                <label class="form-check-label" for="adultCheckbox">Adult</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="age" value="Senior" id="seniorCheckbox">
+                                <label class="form-check-label" for="seniorCheckbox">Senior</label>
+                            </div>
+
+                            <h6>Color</h6>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="color" value="Black" id="blackCheckbox">
+                                <label class="form-check-label" for="blackCheckbox">Black</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="color" value="White" id="whiteCheckbox">
+                                <label class="form-check-label" for="whiteCheckbox">White</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="color" value="Blue" id="blueCheckbox">
+                                <label class="form-check-label" for="blueCheckbox">Blue</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="color" value="Brown" id="brownCheckbox">
+                                <label class="form-check-label" for="brownCheckbox">Brown</label>
+                            </div>    
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="color" value="Golden" id="goldenCheckbox">
+                                <label class="form-check-label" for="goldenCheckbox">Golden</label>
+                            </div>     
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="color" value="Cream" id="creamCheckbox">
+                                <label class="form-check-label" for="creamCheckbox">Cream</label>
+                            </div>  
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="color" value="Gray" id="grayCheckbox">
+                                <label class="form-check-label" for="grayCheckbox">Gray</label>
+                            </div>  
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="color" value="Brindle" id="brindleCheckbox">
+                                <label class="form-check-label" for="brindleCheckbox">Brindle</label>
+                            </div>  
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="color" value="Merle" id="merleCheckbox">
+                                <label class="form-check-label" for="merleCheckbox">Merle</label>
+                            </div>  
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="color" value="Blue" id="blueCheckbox">
+                                <label class="form-check-label" for="blueCheckbox">Blue</label>
+                            </div>  
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="color" value="Orange" id="orangeCheckbox">
+                                <label class="form-check-label" for="orangeCheckbox">Orange</label>
+                            </div>  
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="color" value="Tabby" id="tabbyCheckbox">
+                                <label class="form-check-label" for="tabbyCheckbox">Tabby</label>
+                            </div>  
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="color" value="Tortoiseshell" id="tortoiseshellCheckbox">
+                                <label class="form-check-label" for="tortoiseshellCheckbox">Tortoiseshell</label>
+                            </div>  
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="color" value="Spotted/Dappled" id="dappledCheckbox">
+                                <label class="form-check-label" for="dappledCheckbox">Spotted/Dappled</label>
+                            </div>         
+                            <!-- Agregar más colores según sea necesario -->
+
+                            <div class="d-flex justify-content-center my-3">
+                                <a href="/adoptions" class="btn btn-secondary me-3">Delete</a>
+                                <button type="submit" class="btn papuclase text-white px-5 py-2">Filter by</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contenedor de tarjetas de animales -->
+        <div class="col-md-8">
+            <div class="row d-flex">
+                {% if no_results %}
+                <div class="alert alert-danger text-center w-100">
+                    No results were found for your search.
+                </div>
+            {% else %}
+            
+                {% for adoption in adoptions %}
+                <div class="col-md-4 mb-4">
+                    <div class="card papuclick h-100"  data-bs-toggle="modal" data-bs-target="#animalModal" data-id="{{ adoption.id }}" data-name="{{ adoption.name }}" data-type="{{ adoption.type }}" data-sex="{{ adoption.sex }}" data-age="{{ adoption.age }}" data-size="{{ adoption.size }}" data-color="{{ adoption.color }}" data-image="{{ url_for('static', filename=adoption.image) }}" data-sterilized="{{ adoption.sterilized  }}" data-vaccinated="{{ adoption.vaccinated  }}" data-description="{{ adoption.description }}">
+                        <img src="{{ url_for('static', filename=adoption.image) }}" class="card-img-top adoptionsimgs" alt="Image of {{ adoption.name }}">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">{{ adoption.name }}</h5>
+                            <hr>
+                            <p class="card-text"><strong>type:</strong>{{ adoption.type }}</p>
+                            <p class="card-text"><strong>sex:</strong> {{ adoption.sex }}</p> 
+                            <p class="card-text"><strong>age:</strong> {{ adoption.age }}</p>
+                            <p class="card-text"><strong>size:</strong> {{ adoption.size }}</p>
+                            <p class="card-text"><strong>color:</strong> {{ adoption.color }}</p>
+                            <p class="card-text"><strong>sterilized:</strong> {{ adoption.sterilized  }}</p>
+                            <p class="card-text"><strong>vaccinated:</strong> {{ adoption.vaccinated  }}</p>
+                            <hr>
+                            <p class="card-text"> {{ adoption.description }}</p>
+                            {% if current_user.id == adoption.id_sesion %}
+                            <!-- Botón deshabilitado para las mascotas que el usuario ha subido -->
+                            <button class="btn btn-secondary" disabled>Adopt me!</button>
+                            {% else %}
+                            {% if current_user.is_authenticated %}
+                                <a href="/adoption-summary/{{ adoption.id }}" class="btn papuclase text-white">Adopt me!</a>
+                            {% else %}
+                                <a href="/login" class="btn papuclase text-white">Login to adopt</a>
+                            {% endif %}
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+              {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% include 'footer.html' %}
+    <div class="modal fade" id="animalModal" tabindex="-1" aria-labelledby="animalModalLabel" aria-hidden="true">
+        <br><br><br><br>
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="animalModalLabel">Pawl details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+                            <img id="animal-image" class="img-fluid" alt="Animal image">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <h3 id="animal-name"></h3>
+                            <p><strong>type:</strong> <span id="animal-type"></span></p>
+                            <p><strong>sex:</strong> <span id="animal-sex"></span></p>
+                            <p><strong>age:</strong> <span id="animal-age"></span></p>
+                            <p><strong>size:</strong> <span id="animal-size"></span></p>
+                            <p><strong>color:</strong> <span id="animal-color"></span></p>
+                            <p><strong>sterilized:</strong> <span id="animal-sterilized"></span></p>
+                            <p><strong>vaccinated:</strong> <span id="animal-vaccinated"></span></p>
+                            <p><strong>description:</strong> <span id="animal-description"></span></p>                            
+                          
+                        </div>
+                    </div>
+                </div>                
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+
+    // JavaScript para cargar los detalles del animal al hacer clic
+    var animalModal = document.getElementById('animalModal');
+    animalModal.addEventListener('show.bs.modal', function (event) {
+        var button = event.relatedTarget; // Elemento que activó el modal
+        var name = button.getAttribute('data-name');
+        var type = button.getAttribute('data-type');
+        var image = button.getAttribute('data-image');
+        var size = button.getAttribute('data-size');
+        var sex = button.getAttribute('data-sex');
+        var age = button.getAttribute('data-age');
+        var color = button.getAttribute('data-color');
+        var sterilized = button.getAttribute('data-sterilized');
+        var vaccinated = button.getAttribute('data-vaccinated');
+        var description = button.getAttribute('data-description');
+        
+        // Establecer los valores en el modal
+        var modalName = animalModal.querySelector('#animal-name');
+        var modalSex = animalModal.querySelector('#animal-sex');
+        var modalAge = animalModal.querySelector('#animal-age');
+        var modalSize = animalModal.querySelector('#animal-size');
+        var modalType = animalModal.querySelector('#animal-type');
+        var modalColor = animalModal.querySelector('#animal-color');
+        var modalSterilized = animalModal.querySelector('#animal-sterilized');
+        var modalVaccinated = animalModal.querySelector('#animal-vaccinated');
+        var modalImage = animalModal.querySelector('#animal-image');
+        var modalDescription = animalModal.querySelector('#animal-description');
+        var modalApplyButton = animalModal.querySelector('a.btn-primary');
+       
+        
+        modalName.textContent = name;
+        modalType.textContent = type;
+        modalSize.textContent = size;
+        modalAge.textContent = age;
+        modalSex.textContent = sex;
+        modalColor.textContent = color;
+        modalSterilized.textContent = sterilized;
+        modalVaccinated.textContent = vaccinated;
+        modalImage.src = image;
+        modalDescription.textContent = description;
+    });
+    </script>
+
+    
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adoption Summary</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  {% include 'header.html' %}
+  <div class="container mt-5">
+    <h2 class="text-center mb-4">Adoption Summary</h2>
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+      <!-- Datos de la mascota -->
+      <div class="col">
+        <div class="card h-100">
+          <div class="card-header papuclase text-white">
+            Pet Information
+          </div>
+          <div class="card-body">
+            <p><strong>Name:</strong> {{ adoption.name }}</p>
+            <p><strong>Type:</strong> {{ adoption.type }}</p>
+            <p><strong>Sex:</strong> {{ adoption.sex }}</p>
+            <p><strong>Age:</strong> {{ adoption.age }}</p>
+            <p><strong>Size:</strong> {{ adoption.size }}</p>
+            <p><strong>Color:</strong> {{ adoption.color }}</p>
+            <p><strong>Vaccinated:</strong> {{ adoption.vaccinated }}</p>
+            <p><strong>Sterilized:</strong> {{ adoption.sterilized }}</p>
+            <img src="{{ url_for('static', filename=adoption.image) }}" class="card-img-top adoptionsimgs" style="width: 30%; height: 30%;" alt="{{ adoption.name }}">
+          </div>
+        </div>
+      </div>
+      
+      <!-- Datos del usuario que da en adopción -->
+      <div class="col">
+        <div class="card h-100">
+          <div class="card-header papuclase text-white">
+            Owner Information
+          </div>
+          <div class="card-body">
+            <p><strong>Username:</strong> {{ owner.username }}</p>
+            <p><strong>Email:</strong> {{ owner.mail }}</p>
+            <p><strong>Phone:</strong> {{ owner.phone }}</p>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Datos del usuario que adopta -->
+      <div class="col">
+        <div class="card h-100">
+          <div class="card-header papuclase text-white">
+            Adopter Information
+          </div>
+          <div class="card-body">
+            <p><strong>Username:</strong> {{ adopter.username }}</p>
+            <p><strong>Email:</strong> {{ adopter.mail }}</p>
+            <p><strong>Description:</strong> {{ adopter.description }}</p>
+            <p><strong>Phone:</strong> {{ adopter.phone }}</p>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Estudio Socioeconómico -->
+      <div class="col">
+        <div class="card h-100">
+          <div class="card-header papuclase text-white">
+            Socioeconomic Study
+          </div>
+          <div class="card-body">
+            <p><strong>Monthly Budget:</strong> {{ socioeconomic.pregunta1 }}</p>
+            <p><strong>Available Space:</strong> {{ socioeconomic.pregunta2 }}</p>
+            <p><strong>Walking Frequency:</strong> {{ socioeconomic.pregunta3 }}</p>
+            <p><strong>Time Dedication:</strong> {{ socioeconomic.pregunta4 }}</p>
+            <p><strong>Agreement:</strong> {{ socioeconomic.pregunta5 }}</p>
+            <p><strong>Additional Comments:</strong> {{ socioeconomic.pregunta6 }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Botones de acción -->
+    <div class="d-flex justify-content-center mt-4">
+      <form action="{{ url_for('confirm_adoption', id_adoption=adoption.id) }}" method="POST">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        <button type="submit" class="btn papuclase text-white mx-4">Confirm Adoption</button>
+      </form>
+      <a href="/adoptions" class="btn papuclase text-white">Cancel Adoption</a>
+    </div>
+  </div>
+  <br><br>
+  {% include 'footer.html' %}
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

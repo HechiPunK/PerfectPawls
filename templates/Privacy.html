@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms and Conditions | Perfect Pawls</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../Static/styles.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+    {% include 'header.html' %}
+
+<div class="container mt-5">
+    <div class="content-box">
+        <h1 class="text-center">Privacy policy</h1>
+        <p>Last updated: [Date]</p>
+
+    <h2>1. Information Collected</h2>
+    <p>We collect the following personal information:</p>
+    <ul>
+        <li>Name</li>
+        <li>Email address</li>
+        <li>Information about your income</li>
+    </ul>
+
+    <h2>2. Use of Information</h2>
+    <p>We use the information collected to make adoptions safer and suitable for animals and their future owners.</p>
+
+    <h2>3. Sharing Data</h2>
+    <p>We share your personal information with shelters that provide animals for adoption to facilitate the adoption process.</p>
+
+    <h2>4. Security of Information</h2>
+    <p>We implement reasonable security measures to protect your personal information, including:</p>
+    <ul>
+        <li>Using encryption for data transmission.</li>
+        <li>Restricting access to personal information to authorized personnel only.</li>
+        <li>Conducting regular audits of our systems to detect vulnerabilities.</li>
+    </ul>
+
+    <h2>5. User Rights</h2>
+    <p>You have the right to access, correct, or delete your personal information at any time. If you wish to exercise these rights, please contact us.</p>
+
+    <h2>6. Cookies</h2>
+    <p>This site uses cookies to enhance user experience. Cookies are text files stored on your device that allow us to:</p>
+    <ul>
+        <li>Recognize your browser and collect information about site usage.</li>
+        <li>Personalize content and ads based on your preferences.</li>
+        <li>Analyze website traffic.</li>
+    </ul>
+    <p>You can control the use of cookies through your browser settings.</p>
+
+    <h2>7. Changes to the Policy</h2>
+    <p>We reserve the right to modify this privacy policy at any time. You will be notified of significant changes through a notice on our site.</p>
+    </div>
+</div>
+
+{% include 'footer.html' %}
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

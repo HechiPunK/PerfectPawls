@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subir Imagen</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="https://kit.fontawesome.com/43c9de827a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../static/estilos.css">
+</head>
+<body>
+    {% include 'header.html' %}
+    <br><br>
+    <div class="container mt-5">       
+            <h1 class="text-center mb-4">Upload your Pawl</h1>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <form method="post" enctype="multipart/form-data">
+                        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                        <div class="mb-3">
+                            <label for="image" class="form-label">Upload an image of your pet</label>
+                            <input class="form-control" type="file" id="image" name="image" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name of the pet</label>
+                            <input type="text" class="form-control" maxlength="50" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="type" class="form-label">2. Select the type of your pet?</label>
+                            <select class="form-select" id="type" name="type" required>
+                            <option value="" disabled selected>Select one option</option>
+                            <option value="Dog">Dog</option>
+                            <option value="Cat">Cat</option>
+                            <option value="Other">Other</option>                     
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="sex" class="form-label">3. Select the sex of your pet?</label>
+                            <select class="form-select" id="sex" name="sex" required>
+                            <option value="" disabled selected>Select one option</option>
+                            <option value="Female">Female</option>
+                            <option value="Male">Male</option>                     
+                            </select>
+                        </div>
+                    
+                        <div class="mb-3">
+                            <label for="age" class="form-label">4. Select the age of your pet?</label>
+                            <select class="form-select" id="age" name="age" required>
+                            <option value="" disabled selected>Select one option</option>
+                            <option value="Puppy">Puppy</option>
+                            <option value="Adult">Adult</option>
+                            <option value="Senior">Senior</option>                        
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="size" class="form-label">5. Select the size of your pet?</label>
+                            <select class="form-select" id="size" name="size" required>
+                            <option value="" disabled selected>Select one option</option>
+                            <option value="Small">Small</option>
+                            <option value="Medium">Medium</option>
+                            <option value="Large">Large</option>                        
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="color" class="form-label">6. Select the color of your pet?</label>
+                            <select class="form-select" id="color" name="color" required>
+                              <option value="" disabled selected>Select one option</option>
+                              <option value="Black">Black</option>
+                              <option value="White">White</option>
+                              <option value="Brown">Brown</option>
+                              <option value="Golden">Golden</option>
+                              <option value="Cream">Cream</option>
+                              <option value="Gray">Gray</option> 
+                              <option value="Brindle">Brindle</option>
+                              <option value="Merle">Merle</option>
+                              <option value="Blue">Blue</option>    
+                              <option value="Orange">Orange</option>
+                              <option value="Tabby">Tabby</option>
+                              <option value="Tortoiseshell">Tortoiseshell</option>
+                              <option value="Spotted/Dappled">Spotted/Dappled</option>                              
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="color" class="form-label">7. Is yout pet sterilized?</label>
+                            <select class="form-select" id="sterilized" name="sterilized" required>
+                              <option value="" disabled selected>Select one option</option>
+                              <option value="Yes">Yes</option>
+                              <option value="No">No</option>                                                      
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="color" class="form-label">8. Has your pet been vaccinated within the last three years?</label>
+                            <select class="form-select" id="vaccinated" name="vaccinated" required>
+                              <option value="" disabled selected>Select one option</option>
+                              <option value="Yes">Yes</option>
+                              <option value="No">No</option>                                                      
+                            </select>
+                        </div>
+                            
+                        <div class="mb-3">
+                            <label for="description" class="form-label">Add a short description</label>
+                            <textarea class="form-control" maxlength="100" id="description" name="description" rows="3" placeholder="Write here a short description of the pet" required></textarea>
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn papuclase text-white">submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>    
+    </div>
+    <br><br>
+    {% include 'footer.html' %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

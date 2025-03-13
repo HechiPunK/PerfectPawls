@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms and Conditions | Perfect Pawls</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../Static/styles.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+    {% include 'header.html' %}
+
+<div class="container mt-5">
+    <div class="content-box">
+        <h1 class="text-center">Terms and Conditions</h1>
+        <p>Last updated: [Date]</p>
+
+        <h2>1. Acceptance of Terms</h2>
+        <p>By accessing and using this website, you agree to be bound by these terms and conditions and all applicable laws.</p>
+
+        <h2>2. Use of the Site</h2>
+        <p>Perfect Pawls is dedicated to pet adoption. You may use our site only for legal purposes and in accordance with these conditions. We prohibit any use that is fraudulent, illegal, or violates intellectual property rights. Additionally, you may not:</p>
+        <ul>
+            <li>Use the site to transmit any offensive or inappropriate material.</li>
+            <li>Engage in activities that interfere with the operation or security of the site.</li>
+            <li>Misuse the personal information of other users.</li>
+        </ul>
+
+        <h2>3. Intellectual Property</h2>
+        <p>All content on this site, including text, graphics, logos, and software, is protected by copyright and other intellectual property laws. You may not reproduce, distribute, or modify any content without our written consent.</p>
+
+        <h2>4. Limitation of Liability</h2>
+        <p>Perfect Pawls shall not be liable for any direct, indirect, incidental, or consequential damages resulting from the use or inability to use the site.</p>
+
+        <h2>5. Modifications to Terms</h2>
+        <p>We reserve the right to modify these terms at any time. You will be notified of significant changes to these terms through a notice on the site.</p>
+
+        <h2>6. Governing Law</h2>
+        <p>These terms shall be governed by and construed in accordance with the laws of Mexico, without regard to its conflict of law provisions.</p>
+
+        <h2>7. Contact for Inquiries</h2>
+        <p>If you have questions about these terms, please contact us at: <a href="mailto:contact@perfectpawls.com">contact@perfectpawls.com</a>.</p>
+    </div>
+</div>
+
+{% include 'footer.html' %}
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tips & Cares Dogs</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../Static/styles.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  
+  
+  {% include 'header.html' %}
+
+  <!-- Main container for content -->
+  <div class="container my-5">
+    
+    <!-- Page Title -->
+    <div class="text-center mb-5 b-5">
+      <h1 class="display-4">Dog care tips</h1>
+      <p class="lead">Things you might know if you want to adopt a dog</p>
+    </div>
+
+    <!-- Row for main content -->
+    <div class="row">
+      
+      <!-- Section 1: Preparación para la Adopción -->
+        <div class="col-md-6 minh rounded justificado text-white text-center bgtipscares">
+          <h2>1. Evaluate your lifestyle</h2>
+          <p>Evaluate your daily routine, living space, and financial resources to determine the type of dog that best fits your lifestyle. Different breeds and ages have varying energy levels and care requirements, and in order to do this we recommend you to do our socioeconomic study to find your perfect pawl that fits in your lifestyle.</p>
+        </div>
+        <div class="col-md-6 minh text-center">
+          <img src="../static/img/evaluate2.0.png" alt="Preparación para la adopción" class="rounded img-fluid minh">
+        </div>
+        <!-- Section 2: Conociendo a tu Futuro Compañero -->
+        <div class="col-md-6 order-md-2 rounded justificado text-white text-center bgtipscares minh">
+            <h2>2. Prepare your home</h2>
+            <p>Remember that your pet is getting used to his new human family as much as you are getting used to your new pet. Create a safe and comfortable environment by removing hazards and setting up designated areas for feeding, sleeping, and play.</p>
+        </div>
+        <div class="col-md-6 order-md-1 minh text-center">
+            <img src="../static/img/SetUphome.png" alt="Conociendo al perro" class="img-fluid rounded minh">
+        </div>
+    </div>
+        <!-- Section 3: Ajuste al Nuevo Hogar -->
+    <div class="row">     
+        <div class="col-md-6 rounded justificado text-white text-center bgtipscares minh">
+          <h2>3. Veterinary check-Up</h2>
+          <p>Arrange an initial health examination to assess the dog's health, update vaccinations, and discuss a preventive care plan.</p>
+        </div>
+        <div class="col-md-6 minh text-center">
+          <img src="../static/img/Veterinary.png" alt="Ajuste al nuevo hogar" class="img-fluid rounded minh">
+        </div>
+        <!-- Section 4: Cuidados Básicos -->
+        <div class="col-md-6 order-md-2 rounded justificado text-white text-center bgtipscares minh">
+          <h2>4. Feeding</h2>
+          <p>Every different type of dog needs a different alimentation, feed your dog a balanced diet appropriate for its age, size, and activity level. Consult your veterinarian for specific dietary recommendations. </p>
+        </div>
+        <div class="col-md-6 order-md-1 minh text-center">
+          <img src="../static/img/comidaperro.png" alt="Cuidados básicos del perro" class="img-fluid rounded minh">
+        </div>
+    </div>
+        <!-- Section 5: Creando un Vínculo -->
+    <div class="row">     
+        <div class="col-md-6 rounded justificado text-white text-center bgtipscares minh">
+          <h2>5. Excercise</h2>
+          <p>Dogs need exercise to burn calories, stimulate their minds, and stay healthy. Individual exercise needs vary based on breed or breed mix, sex, age and level of health. Supervised fun and games will satisfy many of your pet's instinctual urges to dig, herd, chew, retrieve and chase.</p>
+        </div>
+        <div class="col-md-6 minh text-center">
+          <img src="../static/img/Exercise.png" alt="Creando un vínculo" class="img-fluid rounded exerciseimg">
+        </div>
+        <div class="col-md-6 order-md-2 justificado text-white text-center bgtipscares minh">
+          <h2>6. Get indentification</h2>
+          <p>Sadly but true, all too often dogs go missing, so be prepared and get a collar with personalized tags with your dogs name, your address, and your phone number.</p>
+        </div>
+        <div class="col-md-6 order-md-1 minh text-center">
+          <img src="../static/img/identification.png" alt="Creando un vínculo" class="img-fluid rounded minh">
+        </div>
+    </div>
+    <div class="row">  
+        <div class="col-md-6 rounded justificado text-white text-center bgtipscares minh">
+          <h2>7. Maintain Grooming and Hygiene </h2>
+          <p>Regularly groom your dog, including brushing, bathing, and dental care, to maintain overall health and cleanliness, note that every dog have differents needs, so consult your veterinary for specific recommendations.</p>
+        </div>
+        <div class="col-md-6 minh text-center">
+          <img src="../static/img/brushing.png" alt="Creando un vínculo" class="img-fluid rounded minh">
+        </div>
+
+        <div class="col-md-6 order-md-2 rounded justificado text-white text-center bgtipscares minh">
+          <h2>8. Understand the commitment </h2>
+          <p>Recognize that adopting a dog is a long-term commitment, often spanning 10 to 15 years or more. So be prepared for the responsibilities and changes this entails.</p>
+        </div>
+        <div class="col-md-6 text-center">
+          <img src="../static/img/Compromiso.png" alt="Creando un vínculo" class="img-fluid rounded minh">
+        </div>
+    </div>
+
+
+    <!-- End of main row -->
+
+  </div> <!-- End of container -->
+
+  {% include 'footer.html' %}
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

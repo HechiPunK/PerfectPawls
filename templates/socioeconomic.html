@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfect Pawls</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../static/estilos.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+  <body>
+
+    {% include 'header.html' %}
+    <br><br>
+    <div class="container card pb-5 col-5 mt-5 mb-5 content-box">
+      <h2 class="text-center m-5">Socioeconomic study</h2>
+
+      <form action="/socioeconomic" method="POST">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        
+        <!-- Pregunta 1 -->
+        <div class="mb-3">
+          <label for="pregunta1" class="form-label">1. How much can you spend monthly on pet care (food, veterinarian, etc.)?</label>
+          <select class="form-select" id="pregunta1" name="pregunta1" required>
+            <option value="" disabled selected>Select one option</option>
+            <option value="$600 - $900 MXN">$600 - $900 MXN</option>
+            <option value="$900 - $1100 MXN ">$900 - $1100 MXN </option>
+            <option value="$1100 - $1400 MXN">$1100 - $1400 MXN </option>
+            <option value="More than $1400 MXN">More than $1400 MXN </option>
+          </select>
+        </div>
+
+        <!-- Pregunta 2 -->
+        <div class="mb-3">
+          <label for="pregunta2" class="form-label">2. How much space do you have available in your home for a pet?</label>
+          <select class="form-select" id="pregunta2" name="pregunta2" required>
+            <option value="" disabled selected>Select one option</option>
+            <option value="Limited space (only a small apartment or studio)">Limited space (only a small apartment or studio)</option>
+            <option value="Moderate space (apartment with a terrace or small yard)">Moderate space (apartment with a terrace or small yard) </option>
+            <option value="Ample space (house with a large garden or play area)"> Ample space (house with a large garden or play area)</option>          
+          </select>
+        </div>
+        
+        <!-- Pregunta 3 -->
+       
+        <div class="mb-3">
+          <label for="pregunta3" class="form-label">3. How often can you walk your pet each day?</label>
+          <select class="form-select" id="pregunta3" name="pregunta3" required>
+            <option value="" disabled selected>Select one option</option>
+            <option value="Only once a day">Only once a day</option>
+            <option value="Twice a day">Twice a day</option>
+            <option value="Three times a day or more">Three times a day or more</option>
+            <option value="None">None</option>
+          </select>
+        </div>
+        
+        <!-- Pregunta 4 -->
+        
+        <div class="mb-3">
+          <label for="pregunta4" class="form-label">4. How much daily time can you dedicate to caring for and playing with the pet?</label>
+          <select class="form-select" id="pregunta4" name="pregunta4" required>
+            <option value="" disabled selected>Select one option</option>
+            <option value="Less than 1 hour">Less than 1 hour</option>
+            <option value="Between 1 and 2 hours">Between 1 and 2 hours</option>
+            <option value="More than 2 hours">More than 2 hours</option>
+            <option value="None">None</option>
+          </select>
+        </div>
+
+        <!-- Pregunta 5 -->
+        <div class="mb-3">
+          <label for="pregunta5" class="form-label">5. Do you live with other people, and they are agree with having a new pet?</label>
+          <select class="form-select" id="pregunta5" name="pregunta5" required>
+            <option value="" disabled selected>Select one option</option>
+            <option value="Yes, and they are agree">Yes, and they are agree</option>
+            <option value="Yes, they are not agree">Yes, they are not agree</option>
+            <option value="No, i live alone">No, i live alone</option>          
+          </select>
+        </div>
+  
+        <!-- Respuesta Abierta -->
+        <div class="mb-3">
+          <label for="respuestaAbierta" class="form-label">If you another additional comment place it here</label>
+          <textarea class="form-control" id="respuestaAbierta" rows="3" placeholder="write your comment here..." name="respuestaAbierta"></textarea>
+        </div>    
+        
+        <div class=" card container text mb-5 content-box">
+          <h2 class="text-center">Terms & Conditions</h2>
+          <p>1. Dogs and cats have health needs such as proper nutrition, medical care, grooming, and exercise.
+            They also have emotional needs, including spending time with them, training them, and integrating them into your family life.</p>
+          <p>2. By adopting, you take responsibility for their needs. Ensure that you are willing and have the time and resources to meet these obligations.</p>
+          <p>3. Choose your next companion based on their personality and yours, as well as your personal needs and lifestyle. Do not base your decision solely on their physical appearance; the goal is to create harmony so that you and your family are happy.</p>
+          <p>4. Consider where or with whom you will leave your pet when you go on vacation and cannot take them with you.</p>
+          <p>5. Think about what would happen if you move to another city or a residence where pets are not allowed. Shelter dogs and cats deserve a second chance at life, and we want to ensure they find a responsible owner committed to caring for them for life.</p>
+          <p>If any of the above points raise doubts or concerns, it might not be the right time for you to take on this commitment. In the meantime, you can support this cause by volunteering at a shelter or virtually adopting by sponsoring the rehabilitation of an animal in need.</p>
+  
+            <!-- Términos y condiciones -->
+            <div class="mb-3">
+                <p>
+                    By checking the box below, I confirm that I have read and agree to the Terms and Conditions.
+                </p>
+            </div>
+    
+            <!-- Checkbox Obligatorio con Validación de Bootstrap -->
+            <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" id="termsCheckbox" required>
+                <label class="form-check-label" for="termsCheckbox">
+                    I have read and agree to the Terms and Conditions.
+                </label>
+                <div class="invalid-feedback">
+                    You must agree to the terms and conditions to proceed.
+                </div>
+            </div>
+    
+            <!-- Botón Submit -->
+            <button type="submit" class="btn papuclase text-white">Submit</button>
+      </form>
+    </div>
+  </div>
+  
+  
+    {% include 'footer.html' %}
+    
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
